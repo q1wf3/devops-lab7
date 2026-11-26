@@ -51,3 +51,9 @@ docker tag ticket-service:v1 YOUR_DOCKERHUB_NAME/ticket-service:v1
 docker push YOUR_DOCKERHUB_NAME/ticket-service:v1
 docker pull YOUR_DOCKERHUB_NAME/ticket-service:v1
 ```
+
+## Проверка защиты main
+
+В PR #1 намеренно добавлена локальная переменная `unused`, которая не использовалась. Проверки Build and Test и Lint завершились ошибкой; кнопка Merge pull request была недоступна. Ошибка удалена следующим коммитом. Правило main требует успешных проверок Go 1.21.13, Go 1.22.12 и Lint, в том числе для администратора.
+
+При отсутствии секретов Docker Hub workflow выполняет сборку для двух архитектур, но явно отмечает пропуск публикации. Для публикации добавьте секреты и запустите Docker через Run workflow на main.
