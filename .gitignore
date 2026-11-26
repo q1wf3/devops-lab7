@@ -1,0 +1,5 @@
+.DS_Store
+ticket-service/server
+ticket-service/coverage*.out
+evidence/*.tar
+tmp/

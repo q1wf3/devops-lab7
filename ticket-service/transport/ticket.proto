@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package ticket;
+
+option go_package = "example.com/ticket-service/pb";
+
+message Ticket {
+  string id         = 1;
+  string event_name = 2;
+  string seat       = 3;
+  double price      = 4;
+  bool   sold       = 5;
+}
+
+message CreateRequest {
+  string event_name = 1;
+  string seat       = 2;
+  double price      = 3;
+}
+
+message CreateResponse {
+  string id    = 1;
+  string error = 2;
+}
+
+message GetByIDRequest {
+  string id = 1;
+}
+
+message GetByIDResponse {
+  Ticket ticket = 1;
+  string error  = 2;
+}
+
+message SellRequest {
+  string id = 1;
+}
+
+message SellResponse {
+  string error = 1;
+}
+
+service TicketService {
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc GetByID(GetByIDRequest) returns (GetByIDResponse);
+  rpc Sell(SellRequest) returns (SellResponse);
+}

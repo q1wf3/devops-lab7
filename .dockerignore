@@ -1,0 +1,10 @@
+.git
+.github
+evidence
+*.md
+**/coverage*.out
+**/*_test.go
+**/*.log
+**/.DS_Store
+**/server
+tmp
