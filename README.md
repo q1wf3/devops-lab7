@@ -46,10 +46,9 @@ docker run --rm -p 127.0.0.1:18082:8080 ticket-service:v1
 
 ```sh
 docker login
-# Заменить YOUR_DOCKERHUB_NAME на собственный логин
-docker tag ticket-service:v1 YOUR_DOCKERHUB_NAME/ticket-service:v1
-docker push YOUR_DOCKERHUB_NAME/ticket-service:v1
-docker pull YOUR_DOCKERHUB_NAME/ticket-service:v1
+docker tag ticket-service:v1 q1wf3/ticket-service:v1
+docker push q1wf3/ticket-service:v1
+docker pull q1wf3/ticket-service:v1
 ```
 
 ## Проверка защиты main
